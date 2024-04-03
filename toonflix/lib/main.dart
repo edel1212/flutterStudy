@@ -25,15 +25,16 @@ class App extends StatelessWidget {
       // 패딩 적용
       body: Padding(
           // 패딩 적용 방식
-          padding: const EdgeInsets.symmetric(horizontal: 40),
+          padding: const EdgeInsets.symmetric(
+            horizontal: 40,
+          ),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
-                // 👉 해당 내부 요소 정렬 기준 - 수평 기준
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Column(
-                    // 👉 해당 내부 요소 정렬 기준 - 수직 기준
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       const Text(
@@ -54,8 +55,49 @@ class App extends StatelessWidget {
                     ],
                   )
                 ],
+              ),
+              const SizedBox(
+                height: 120,
+              ),
+              Text(
+                "Total Balance",
+                style: TextStyle(
+                  color: Colors.white.withOpacity(0.8),
+                  fontSize: 22,
+                ),
+              ),
+              const SizedBox(
+                height: 5,
+              ),
+              const Text(
+                "\$5 194 482",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 44,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              Row(
+                children: [
+                  Container(
+                      decoration: BoxDecoration(
+                        color: Colors.amber,
+                        borderRadius: BorderRadius.circular(45),
+                      ),
+                      child: Padding(
+                        padding:
+                            EdgeInsets.symmetric(vertical: 15, horizontal: 50),
+                        child: Text(
+                          "Transfer",
+                          style: TextStyle(fontSize: 20),
+                        ),
+                      ))
+                ],
               )
-            ],
+            ], /** 전체 Padding -end */
           )),
     ));
   }
